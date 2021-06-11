@@ -67,9 +67,12 @@
         <nb-text :style="{color: 'white'}">Login with Facebook</nb-text>
       </nb-button>
     </touchable-opacity>
-    <text :style="{color: 'blue', marginTop: 20, fontSize: 16}"
+        <nb-button :on-press="signup" transparent light>
+        <nb-text :style="{color: 'blue', marginTop: 20, fontSize: 14}" class="btn-create-account">Create Account</nb-text>
+      </nb-button>
+    <!-- <text :style="{color: 'blue', marginTop: 20, fontSize: 16}"
       >Create Account</text
-    >
+    > -->
   </view>
 </template>
 
@@ -112,6 +115,9 @@ export default {
     };
   },
   methods: {
+    signup(){
+      this.navigation.navigate('Signup');
+    },
     checked() {
       if (this.boolean == true) {
         this.boolean = false;
@@ -234,5 +240,8 @@ export default {
   justify-content: space-between;
   margin-top: 30;
   flex-direction: row;
+}
+.btn-create-account{
+  margin-left: 130;
 }
 </style>
